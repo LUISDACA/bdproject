@@ -91,7 +91,7 @@ public class ActorRepository implements Repository<Actor> {
                 updateStmt.setInt(3, actor.getActorID());
                 updateStmt.executeUpdate();
                 updateStmt.close();
-                System.out.println("Actor actualizado correctamente.");
+                System.out.println("Actor inserted correctly.");
             } else {
 
                 PreparedStatement insertStmt = conn.prepareStatement(
@@ -102,7 +102,7 @@ public class ActorRepository implements Repository<Actor> {
                 insertStmt.setString(3, actor.getLastName());
                 insertStmt.executeUpdate();
                 insertStmt.close();
-                System.out.println("Actor insertado correctamente.");
+                System.out.println("Actor inserted correctly.");
             }
 
         } catch (Exception e) {
@@ -120,9 +120,9 @@ public class ActorRepository implements Repository<Actor> {
             stmt.close();
 
             if (rows > 0) {
-                System.out.println("Actor eliminado correctamente.");
+                System.out.println("Actor successfully removed.");
             } else {
-                System.out.println("No se encontró el actor con ID: " + id);
+                System.out.println("Actor with ID not found: " + id);
             }
 
         } catch (Exception e) {
